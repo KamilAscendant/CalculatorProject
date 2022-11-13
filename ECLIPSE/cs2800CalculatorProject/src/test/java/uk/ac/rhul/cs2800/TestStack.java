@@ -20,6 +20,7 @@ class TestStack {
   // Makes an (empty) Stack.
   @Test
   void test() {
+    @SuppressWarnings("unused") //This just needs to make a stack, doesn't need to use it.
     Stack rs = new Stack();
   }
 

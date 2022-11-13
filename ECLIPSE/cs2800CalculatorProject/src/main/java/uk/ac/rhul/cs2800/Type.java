@@ -11,6 +11,11 @@ public enum Type {
 
   private String type;
 
+  /**
+   * Takes the datatype as input and sets the type of the Entry accordingly.
+   * 
+   * @param inputType is the string representation of the Entry's datatype.
+   */
   private Type(String inputType) {
     this.type = inputType;
   }
