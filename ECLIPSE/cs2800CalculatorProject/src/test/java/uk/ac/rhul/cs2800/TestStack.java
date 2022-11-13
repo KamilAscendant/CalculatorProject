@@ -105,6 +105,7 @@ class TestStack {
     for (int largeTester = 0; largeTester < 100; largeTester++) {
       rs.push(new Entry(largeTester));
     }
+    assertEquals(rs.size(), 100, "Test to see if large pushes stored properly.");
   }
   
   // Test11
@@ -115,5 +116,6 @@ class TestStack {
   @Test
   void testEntryPush() {
     rs.push(new Entry("Among Us"));
+    assertEquals(rs.top().getStr(), "Among Us", "Test to see if non-int entries stored correctly");
   }
 }
