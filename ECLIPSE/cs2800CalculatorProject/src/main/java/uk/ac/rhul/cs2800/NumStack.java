@@ -1,15 +1,15 @@
 package uk.ac.rhul.cs2800;
 
 public class NumStack{
-  private Stack stackNum;
+  private Stack numStack;
   
   public void push(float numEntered) {
     Entry numPush = new Entry(numEntered);
-    stackNum.push(numPush);
+    numStack.push(numPush);
   }
   
-  public void pop() {
-    stackNum.pop();
+  public float pop() {
+    return numStack.pop().getNumber();
   }
   
 }
