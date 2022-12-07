@@ -19,7 +19,7 @@ class testOtherStacks {
     ns = new NumStack();
     ns.push(22);
     ns.push(33);
-    assertEquals(ns.pop(), 10f, "Tests to see if pop returns last thing pushed");
+    assertEquals(ns.pop(), 33f, "Tests to see if pop returns last thing pushed");
   }
 
 }
