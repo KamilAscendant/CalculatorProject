@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 class testOtherStacks {
   private NumStack ns;
   private StrStack ss;
+  private OpStack os;
   
   @BeforeEach
   public void setup() {
@@ -31,5 +32,15 @@ class testOtherStacks {
     ss.push("Among");
     ss.push("Us");
     assertEquals(ss.pop(), "Us", "Tests push and pop");                     
+  }
+  
+  //Test3
+  //Checking to see if OpStack works.
+  @Test
+  void testOpPushPop() {
+    os = new OpStack();
+    os.push(Symbol.DIVIDE);
+    os.push(Symbol.TIMES);
+    assertEquals(os.pop(), Symbol.TIMES, "Tests push and pop");
   }
 }
