@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 class testOtherStacks {
   private NumStack ns;
+  private StrStack ss;
   
   @BeforeEach
   public void setup() {
@@ -22,4 +23,13 @@ class testOtherStacks {
     assertEquals(ns.pop(), 33f, "Tests to see if pop returns last thing pushed");
   }
 
+  //Test2
+  //Checking to see if StrStack works.
+  @Test
+  void testStrPushPop() {
+    ss = new StrStack();
+    ss.push("Among");
+    ss.push("Us");
+    assertEquals(ss.pop(), "Us", "Tests push and pop");                     
+  }
 }
