@@ -75,4 +75,15 @@ class TestRevPolish {
       e.printStackTrace();
     }
   }
+  
+  //Test7
+  //Tries to multiply two numbers
+  @Test
+  void testMultiply() {
+    try {
+      assertEquals(12.0f, rp.evaluate("4 3 *"), "Trying multiplication");
+    } catch (InvalidExpressionException e) {
+      e.printStackTrace();
+    }
+  }
 }

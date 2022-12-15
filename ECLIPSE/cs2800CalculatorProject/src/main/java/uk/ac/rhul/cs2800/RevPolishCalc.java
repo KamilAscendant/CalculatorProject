@@ -38,6 +38,9 @@ public class RevPolishCalc {
             float subtractee = this.values.pop();
             float subtract = subtractee - subtractor;
             this.values.push(subtract);
+          }else if (currentOperator.equals(Symbol.TIMES)) {
+            float multiplied = this.values.pop() * this.values.pop();
+            this.values.push(multiplied);
           }
         }
       }
