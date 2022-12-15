@@ -17,6 +17,6 @@ class TestRevPolish {
   @Test
   void test() {
     //assertThrows(rp.evaluate("179.4 2 10 *+");
-    assertThrows(InvalidExpressionException.class, () -> rp.evaluate("179.4 2 10 *+"));
+    assertThrows(InvalidExpressionException.class, () -> rp.evaluate(""));
   }
 }
