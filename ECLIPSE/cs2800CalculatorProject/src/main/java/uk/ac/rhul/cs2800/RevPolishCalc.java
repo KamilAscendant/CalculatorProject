@@ -41,6 +41,11 @@ public class RevPolishCalc {
           }else if (currentOperator.equals(Symbol.TIMES)) {
             float multiplied = this.values.pop() * this.values.pop();
             this.values.push(multiplied);
+          }else if (currentOperator.equals(Symbol.DIVIDE)) {
+            float divisor = this.values.pop();
+            float dividend = this.values.pop();
+            float result = dividend / divisor;
+            this.values.push(result);
           }
         }
       }

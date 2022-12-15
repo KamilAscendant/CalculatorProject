@@ -86,4 +86,16 @@ class TestRevPolish {
       e.printStackTrace();
     }
   }
+  
+  //Test8
+  //Tries to divide two numbers
+  @Test
+  void testDivide() {
+    try {
+      assertEquals(4.0f, rp.evaluate("12 3 /"), "Trying division");
+    } catch (InvalidExpressionException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
+  }
 }
