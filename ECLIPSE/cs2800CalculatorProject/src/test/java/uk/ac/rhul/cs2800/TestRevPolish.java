@@ -46,9 +46,31 @@ class TestRevPolish {
   //Test4
   //Tries to evaluate a simple expression (only two numbers and one operator)
   @Test
-  void testSimpleCalc() {
+  void testSimpleAdd() {
     try {
       assertEquals(6.5f, rp.evaluate("3.5 3 +"), "Trying a simple calculation");
+    } catch (InvalidExpressionException e) {
+      e.printStackTrace();
+    }
+  }
+  
+  //Test5
+  //Tries to add more than two numbers together
+  @Test
+  void testLargeAdd() {
+    try {
+      assertEquals(9.0f, rp.evaluate("3 3 + 3 +"), "Trying to add multiple numbers");
+    } catch (InvalidExpressionException e) {
+      e.printStackTrace();
+    }
+  }
+  
+  //Test6
+  //Tries to subtract two numbers
+  @Test
+  void testSubtract() {
+    try {
+      assertEquals(6.5f, rp.evaluate("9.5 3  -"), "Trying subtraction");
     } catch (InvalidExpressionException e) {
       e.printStackTrace();
     }

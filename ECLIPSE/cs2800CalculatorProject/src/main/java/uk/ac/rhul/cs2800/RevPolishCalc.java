@@ -33,7 +33,11 @@ public class RevPolishCalc {
           if(currentOperator.equals(Symbol.PLUS)) {
             float add = this.values.pop() + this.values.pop();
             this.values.push(add);
-          }else {
+          }else if (currentOperator.equals(Symbol.MINUS)) {
+            float subtractor = this.values.pop();
+            float subtractee = this.values.pop();
+            float subtract = subtractee - subtractor;
+            this.values.push(subtract);
           }
         }
       }
