@@ -98,4 +98,15 @@ class TestRevPolish {
       e.printStackTrace();
     }
   }
+  
+  //Test9
+  //Tests an equation with multiple operations
+  @Test
+  void testComplex() {
+    try {
+      assertEquals(12.0f, rp.evaluate("3 3 + 4 * 2 /"), "Trying complex calculations");
+    } catch (InvalidExpressionException e) {
+      e.printStackTrace();
+    }
+  }
 }
