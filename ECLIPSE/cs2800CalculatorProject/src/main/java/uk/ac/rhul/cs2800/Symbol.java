@@ -8,8 +8,8 @@ package uk.ac.rhul.cs2800;
  *
  */
 public enum Symbol {
-  LEFT_BRACKET("Left Bracket"), RIGHT_BRACKET("Right Bracket"), TIMES("Times"), DIVIDE(
-      "Divide"), PLUS("Plus"), MINUS("Minus"), INVALID("Invalid");
+  LEFT_BRACKET("Left Bracket", "{"), RIGHT_BRACKET("Right Bracket", "}"), TIMES("Times", "*"), DIVIDE(
+      "Divide", "/"), PLUS("Plus", "+"), MINUS("Minus", "-"), INVALID("Invalid", "#");
 
   private String symbol;
 
@@ -17,8 +17,9 @@ public enum Symbol {
    * Takes the enum value of a Symbol object and loads the associated String value.
    *
    * @param inputSymbol The enum symbol for which the String value is being requested.
+   * @param string 
    */
-  private Symbol(String inputSymbol) {
+  private Symbol(String inputName, String inputSymbol) {
     this.symbol = inputSymbol;
   }
 

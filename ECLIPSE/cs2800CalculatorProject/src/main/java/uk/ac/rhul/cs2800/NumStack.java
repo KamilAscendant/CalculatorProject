@@ -16,4 +16,8 @@ public class NumStack{
   public int size() {
     return this.numStack.size();
   }
+
+  public float top() {
+    return this.numStack.top().getNumber();
+  }
 }

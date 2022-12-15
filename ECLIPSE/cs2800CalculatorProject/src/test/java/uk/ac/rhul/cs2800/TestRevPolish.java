@@ -22,11 +22,33 @@ class TestRevPolish {
   }
   
   //Test2
-  //Checks what happens when asked to evaluate a String with only an float
+  //Checks what happens when asked to evaluate a String with only a float
   @Test
   void testFloat() {
     try {
-      assertEquals(0.0f, rp.evaluate("0"), "Checking to see if it can read float value of a string");
+      assertEquals(10.0f, rp.evaluate("10.0"), "Checking to see if it can read float value of a string");
+    } catch (InvalidExpressionException e) {
+      e.printStackTrace();
+    }
+  }
+  
+  //Test3
+  //Checks what happens when asked to evaluate a String with only an Integer
+  @Test
+  void testInteger() {
+    try {
+      assertEquals(5.0f, rp.evaluate("5"), "Checking to see if it can convert Integer in a string to a float");
+    } catch (InvalidExpressionException e) {
+      e.printStackTrace();
+    } 
+  }
+  
+  //Test4
+  //Tries to evaluate a simple expression (only two numbers and one operator)
+  @Test
+  void testSimpleCalc() {
+    try {
+      assertEquals(6.5f, rp.evaluate("3.5 3 +"), "Trying a simple calculation");
     } catch (InvalidExpressionException e) {
       e.printStackTrace();
     }
