@@ -109,4 +109,11 @@ class TestRevPolish {
       e.printStackTrace();
     }
   }
+  
+  //Test10
+  //Tests an equation with more operatees than appropriate
+  @Test
+  void testImbalance() {
+    assertThrows(InvalidExpressionException.class, () -> rp.evaluate("3 3 3 3+ +"), "More numbers than operators+1");
+  }
 }
