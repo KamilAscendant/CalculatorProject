@@ -2,7 +2,7 @@ package uk.ac.rhul.cs2800;
 
 import java.util.Scanner;
 
-public class RevPolishCalc {
+public class RevPolishCalc implements Calculator {
   private NumStack values;
   private float answer;
 

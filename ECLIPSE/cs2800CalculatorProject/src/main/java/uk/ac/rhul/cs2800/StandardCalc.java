@@ -1,9 +1,8 @@
 package uk.ac.rhul.cs2800;
 
-import java.util.EmptyStackException;
 import java.util.Scanner;
 
-public class StandardCalc {
+public class StandardCalc implements Calculator {
 
   private RevPolishCalc rp;
   private StrStack rpEvaluator;
