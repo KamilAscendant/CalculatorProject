@@ -116,4 +116,15 @@ class TestRevPolish {
   void testImbalance() {
     assertThrows(InvalidExpressionException.class, () -> rp.evaluate("3 3 3 3+ +"), "More numbers than operators+1");
   }
+  
+  //Test11
+  //Tests power function
+  @Test
+  void testPower() {
+    try {
+      assertEquals(8.0f, rp.evaluate("2 3 ^"), "Testing exponents");
+    } catch (InvalidExpressionException e) {
+      e.printStackTrace();
+    }
+  }
 }

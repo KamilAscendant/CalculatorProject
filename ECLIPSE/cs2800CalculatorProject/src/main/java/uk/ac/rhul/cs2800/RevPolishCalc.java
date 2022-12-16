@@ -66,6 +66,15 @@ public class RevPolishCalc {
           for (int i = 1; i<power; i++) {
             output = output * number;
           }
+          this.values.push(output);
+        } else if (currentOperator.equals(Symbol.INVERSEPOWER)) {
+          float number = this.values.pop();
+          float power = this.values.pop();
+          float output = number;
+          for (int i = 1; i<power; i++) {
+            output = output * number;
+          }
+          this.values.push(output);
         }
       }
     }
