@@ -2,8 +2,18 @@ package uk.ac.rhul.cs2800;
 
 import java.util.Scanner;
 
+/**
+ * An Ascii menu that interacts with the Calculator so the client can use it.
+ * 
+ * @author zkac152
+ *
+ */
 public class CalcAsciiView {
 
+  /**
+   * Main body of the Ascii view, takes user inputs and uses the Model to evaluate them.
+   * @param args
+   */
   public static void main(String[] args) {
     CalcModel Calculator = new CalcModel();
     String expression = "Startup";
@@ -32,6 +42,10 @@ public class CalcAsciiView {
    System.out.println("Goodbye");
   }
   
+  /**
+   * Method to print out the Ascii menu
+   * 
+   */
   public static void calcMenu() {
     System.out.println("Welcome to the calculator!");
     System.out.println("Type in your expression. Make sure you leave spaces between the characters.");
