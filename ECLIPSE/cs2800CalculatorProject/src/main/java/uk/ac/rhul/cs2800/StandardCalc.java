@@ -51,6 +51,8 @@ public class StandardCalc {
           currentOperator = Symbol.INVERSEMINUS;
         } else if (currentOperator.equals(Symbol.DIVIDE)) {
           currentOperator = Symbol.INVERSEDIVIDE;
+        } else if (currentOperator.equals(Symbol.POWER)) {
+          currentOperator = Symbol.INVERSEPOWER;
         }
         this.operators.push(currentOperator);
       }
