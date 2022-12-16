@@ -49,6 +49,23 @@ public class RevPolishCalc {
           float dividend = this.values.pop();
           float result = dividend / divisor;
           this.values.push(result);
+        } else if (currentOperator.equals(Symbol.INVERSEDIVIDE)) {
+          float divisor = this.values.pop();
+          float dividend = this.values.pop();
+          float result = divisor / dividend;
+          this.values.push(result);
+        } else if (currentOperator.equals(Symbol.INVERSEMINUS)) {
+          float subtractor = this.values.pop();
+          float subtractee = this.values.pop();
+          float subtract = subtractor - subtractee;
+          this.values.push(subtract);
+        } else if (currentOperator.equals(Symbol.POWER)) {
+          float power = this.values.pop();
+          float number = this.values.pop();
+          float output = number;
+          for (int i = 1; i<power; i++) {
+            output = output * number;
+          }
         }
       }
     }

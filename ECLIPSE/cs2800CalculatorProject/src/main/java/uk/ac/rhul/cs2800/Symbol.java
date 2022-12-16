@@ -9,7 +9,8 @@ package uk.ac.rhul.cs2800;
  */
 public enum Symbol {
   LEFT_BRACKET("Left Bracket", "{"), RIGHT_BRACKET("Right Bracket", "}"), TIMES("Times", "*"), DIVIDE(
-      "Divide", "/"), PLUS("Plus", "+"), MINUS("Minus", "-"), INVALID("Invalid", "#");
+      "Divide", "/"), PLUS("Plus", "+"), MINUS("Minus", "-"), INVALID("Invalid", "#"), INVERSEMINUS("Inverse Minus", "!"),
+      POWER("Power", "^"), INVERSEDIVIDE("INVERSEDIVIDE", "\\");
 
   private String symbol;
 

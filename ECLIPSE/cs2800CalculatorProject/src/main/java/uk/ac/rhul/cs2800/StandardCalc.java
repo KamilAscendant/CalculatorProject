@@ -47,6 +47,11 @@ public class StandardCalc {
             break;
           }
         }
+        if (currentOperator.equals(Symbol.MINUS)){
+          currentOperator = Symbol.INVERSEMINUS;
+        } else if (currentOperator.equals(Symbol.DIVIDE)) {
+          currentOperator = Symbol.INVERSEDIVIDE;
+        }
         this.operators.push(currentOperator);
       }
     }
