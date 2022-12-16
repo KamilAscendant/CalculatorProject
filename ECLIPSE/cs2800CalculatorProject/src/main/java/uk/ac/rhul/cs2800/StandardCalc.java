@@ -79,7 +79,6 @@ public class StandardCalc implements Calculator {
       evaluates.append(this.operators.pop().toString() + " ");
     }
     String finalEquation = evaluates.toString();
-    System.out.println(finalEquation);
     float result = rp.evaluate(finalEquation);
     return result;
   }
