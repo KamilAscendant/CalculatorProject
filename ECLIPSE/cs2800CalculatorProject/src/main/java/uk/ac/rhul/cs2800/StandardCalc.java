@@ -2,6 +2,12 @@ package uk.ac.rhul.cs2800;
 
 import java.util.Scanner;
 
+/**
+ * Creates a Standard Calculator object implementing the Calculator interface. This code was influenced by the demo code
+ * from Moodle as well as Professor Cohen's videos.
+ * 
+ * @author zkac152
+ */
 public class StandardCalc implements Calculator {
 
   private RevPolishCalc rp;
@@ -9,6 +15,9 @@ public class StandardCalc implements Calculator {
   private OpStack operators;
   private StringBuilder evaluates;
 
+  /**
+   * Constructor for the StandardCalc. Creates a ReversePolishCalc that handles the calculations.
+   */
   public StandardCalc() {
     rp = new RevPolishCalc();
     rpEvaluator = null;
@@ -17,6 +26,13 @@ public class StandardCalc implements Calculator {
 
   }
 
+  /**
+   * The expression to be evaluated. Iterates over the expression, putting numbers into a Stack and operating on them to give a result.
+   * 
+   * @param String expression to be evaluated.
+   * @return The output of the expression after all operations have been resolved.
+   * @throws InvalidExpressionException - thrown when an empty expression is input.
+   */
   public float evaluate(String expression) throws InvalidExpressionException {
     if (expression == null || expression == ("")) {
       throw new InvalidExpressionException("Invalid Expression");

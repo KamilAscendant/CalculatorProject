@@ -2,6 +2,12 @@ package uk.ac.rhul.cs2800;
 
 import java.util.Scanner;
 
+/**
+ * Creates a Reverse Polish Calculator object implementing the Calculator interface. This code was influenced by the demo code
+ * from Moodle as well as Professor Cohen's videos.
+ * 
+ * @author zkac152
+ */
 public class RevPolishCalc implements Calculator {
   private NumStack values;
   private float answer;
@@ -39,26 +45,21 @@ public class RevPolishCalc implements Calculator {
         } else if (currentOperator.equals(Symbol.MINUS)) {
           float subtractor = this.values.pop();
           float subtractee = this.values.pop();
-          float subtract = subtractee - subtractor;
-          this.values.push(subtract);
+          this.values.push(subtractee - subtractor);
         } else if (currentOperator.equals(Symbol.TIMES)) {
-          float multiplied = this.values.pop() * this.values.pop();
-          this.values.push(multiplied);
+          this.values.push(this.values.pop() * this.values.pop());
         } else if (currentOperator.equals(Symbol.DIVIDE)) {
           float divisor = this.values.pop();
           float dividend = this.values.pop();
-          float result = dividend / divisor;
-          this.values.push(result);
+          this.values.push(dividend / divisor);
         } else if (currentOperator.equals(Symbol.INVERSEDIVIDE)) {
           float divisor = this.values.pop();
           float dividend = this.values.pop();
-          float result = divisor / dividend;
-          this.values.push(result);
+          this.values.push(divisor / dividend);
         } else if (currentOperator.equals(Symbol.INVERSEMINUS)) {
           float subtractor = this.values.pop();
           float subtractee = this.values.pop();
-          float subtract = subtractor - subtractee;
-          this.values.push(subtract);
+          this.values.push(subtractor - subtractee);
         } else if (currentOperator.equals(Symbol.POWER)) {
           float power = this.values.pop();
           float number = this.values.pop();
@@ -84,5 +85,40 @@ public class RevPolishCalc implements Calculator {
       throw new InvalidExpressionException("Imbalanced operation");
     }
     return (this.answer);
+  }
+  
+  private float evaluateOperation(Symbol operand, float num1, float num2) throws InvalidExpressionException {
+    float result = 0;
+    switch (operand) {
+      case PLUS: {
+        result = num1 + num2;
+      }
+      case MINUS: {
+        result = num2 - num1;
+      }
+      case INVERSEMINUS: {
+        result = num1 - num2;
+      }
+      case DIVIDE: {
+        result = num2 / num1;
+      }
+      case INVERSEDIVIDE: {
+        result = num1 / num2;
+      }
+      case TIMES: {
+        result = num1 * num2;
+      }
+      case POWER: {
+        for (int i = 1; i < num2; i++) {
+          result = result * num1;
+        }
+      }
+      case INVERSEPOWER: {
+        for (int i = 1; i < num1; i++) {
+          result = result * num2;
+        }
+      }
+    }
+    return result;
   }
 }
