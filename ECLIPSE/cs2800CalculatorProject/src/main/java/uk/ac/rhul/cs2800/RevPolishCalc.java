@@ -54,7 +54,6 @@ public class RevPolishCalc {
     }
     equation.close();
     this.answer = this.values.pop();
-    System.out.println(this.values.size());
     if (this.values.size() != 0) {
       throw new InvalidExpressionException("Imbalanced operation");
     }
