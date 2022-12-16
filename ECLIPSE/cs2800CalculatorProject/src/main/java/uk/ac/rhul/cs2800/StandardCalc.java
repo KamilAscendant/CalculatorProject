@@ -1,5 +1,6 @@
 package uk.ac.rhul.cs2800;
 
+import java.util.EmptyStackException;
 import java.util.Scanner;
 
 public class StandardCalc {
@@ -35,6 +36,7 @@ public class StandardCalc {
       char numberCheck = currentCharacter.charAt(0);
       if (Character.isDigit(numberCheck) && lastCharNumber == false) {
         evaluates.append(String.valueOf(currentCharacter) + " ");
+        lastCharNumber = true;
       } else {
         Symbol[] operators;
         Symbol currentOperator = Symbol.INVALID;
@@ -47,7 +49,7 @@ public class StandardCalc {
             break;
           }
         }
-        if (currentOperator.equals(Symbol.MINUS)){
+        if (currentOperator.equals(Symbol.MINUS)) {
           currentOperator = Symbol.INVERSEMINUS;
         } else if (currentOperator.equals(Symbol.DIVIDE)) {
           currentOperator = Symbol.INVERSEDIVIDE;
@@ -55,12 +57,14 @@ public class StandardCalc {
           currentOperator = Symbol.INVERSEPOWER;
         }
         this.operators.push(currentOperator);
+        lastCharNumber = false;
       }
     }
     while (this.operators.size() != 0) {
       evaluates.append(this.operators.pop().toString() + " ");
     }
     String finalEquation = evaluates.toString();
+    System.out.println(finalEquation);
     float result = rp.evaluate(finalEquation);
     return result;
   }
