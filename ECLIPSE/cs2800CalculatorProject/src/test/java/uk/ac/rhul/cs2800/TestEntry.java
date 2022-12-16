@@ -72,7 +72,7 @@ class TestEntry {
   @Test
   void testSymbolToString() {
     Entry test = new Entry(Symbol.MINUS);
-    assertEquals(test.getOther().toString(), "Minus", "Testing Symbol toString method");
+    assertEquals(test.getOther().toString(), "-", "Testing Symbol toString method");
   }
 
   // Test7

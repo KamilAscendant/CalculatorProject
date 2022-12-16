@@ -86,39 +86,4 @@ public class RevPolishCalc implements Calculator {
     }
     return (this.answer);
   }
-  
-  private float evaluateOperation(Symbol operand, float num1, float num2) throws InvalidExpressionException {
-    float result = 0;
-    switch (operand) {
-      case PLUS: {
-        result = num1 + num2;
-      }
-      case MINUS: {
-        result = num2 - num1;
-      }
-      case INVERSEMINUS: {
-        result = num1 - num2;
-      }
-      case DIVIDE: {
-        result = num2 / num1;
-      }
-      case INVERSEDIVIDE: {
-        result = num1 / num2;
-      }
-      case TIMES: {
-        result = num1 * num2;
-      }
-      case POWER: {
-        for (int i = 1; i < num2; i++) {
-          result = result * num1;
-        }
-      }
-      case INVERSEPOWER: {
-        for (int i = 1; i < num1; i++) {
-          result = result * num2;
-        }
-      }
-    }
-    return result;
-  }
 }

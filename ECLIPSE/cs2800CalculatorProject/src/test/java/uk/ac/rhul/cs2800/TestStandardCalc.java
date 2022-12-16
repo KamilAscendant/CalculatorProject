@@ -76,4 +76,20 @@ public class TestStandardCalc {
       e.printStackTrace();
     }
   }
+  
+  //Test7
+  //Checks inverse divide and inverse power
+  @Test
+  void tryInverse() {
+    try {
+      assertEquals(10f, sc.evaluate("20 / 2"), "Trying inverted divide");
+    } catch (InvalidExpressionException e) {
+      e.printStackTrace();
+    }
+    try {
+      assertEquals(4f, sc.evaluate("2 * 2"), "Trying inverted power");
+    } catch (InvalidExpressionException e) {
+      e.printStackTrace();
+    }
+  }
 }
